@@ -2,7 +2,8 @@ import { createClient } from 'redis';
 import { serverConfig } from '.';
 
 export const redisClient = createClient({
-    url: serverConfig.REDIS_URL
+    url: serverConfig.REDIS_URL,
+    RESP: 2
 })
 
 redisClient.on('error', (err) => {
